@@ -1,3 +1,12 @@
+const AppRoute = {
+  HOME: '/',
+  CONVERTER: '/converter',
+  SERVICES: '/services',
+  CREDIT: '/credit',
+  CONTACTS: '/contacts',
+  ASK: '/ask',
+};
+
 const Currency = {
   RUB: 'RUB',
   USD: 'USD',
@@ -25,7 +34,11 @@ const customSelectStyles = {
   }),
 };
 
+const today = new Date();
+
 export {
   Currency,
-  customSelectStyles
+  customSelectStyles,
+  today,
+  AppRoute
 };

@@ -56,7 +56,7 @@ function ConverterHistory(props) {
 }
 
 ConverterHistory.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 

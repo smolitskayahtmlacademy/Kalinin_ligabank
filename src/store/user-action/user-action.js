@@ -4,19 +4,19 @@ import { saveResult, clearHistory } from '../action';
 const MAX_HISTORY_LENGTH = 10;
 
 const initialState = {
-  history: [],
+  resultsHistory: [],
 };
 
 const userAction = createReducer(initialState, (builder) => {
   builder
     .addCase(saveResult, (state, action) => {
-      if (state.history.length === MAX_HISTORY_LENGTH) {
-        state.history.shift();
+      if (state.resultsHistory.length === MAX_HISTORY_LENGTH) {
+        state.resultsHistory.shift();
       }
-      state.history.push(action.payload);
+      state.resultsHistory.push(action.payload);
     })
     .addCase(clearHistory, (state) => {
-      state.history = [];
+      state.resultsHistory = [];
     });
 });
 

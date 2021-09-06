@@ -21,7 +21,7 @@ function UserNavigation(props) {
 }
 
 UserNavigation.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default UserNavigation;

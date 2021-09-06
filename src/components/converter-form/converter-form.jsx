@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,14 +6,14 @@ import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import { subDays, format } from 'date-fns';
 import ru from 'date-fns/locale/ru';
-import { Currency, customSelectStyles } from '../../const';
+import { Currency, customSelectStyles, today } from '../../const';
 import { getExchangeRates } from '../../store/app-data/selectors';
 import { saveResult } from '../../store/action';
 import { fetchExchangeRates } from '../../store/api-actions';
 import { convert } from '../../utils';
 import styles from './styles.module.scss';
 
-const CURRENCY_OPTIONS = [
+const currencyOptions = [
   { value: Currency.RUB, label: Currency.RUB },
   { value: Currency.USD, label: Currency.USD },
   { value: Currency.EUR, label: Currency.EUR },
@@ -22,17 +21,15 @@ const CURRENCY_OPTIONS = [
   { value: Currency.CNY, label: Currency.CNY },
 ];
 
-const today = new Date();
-
-const DateRange = {
-  MIN: subDays(today, 6),
-  MAX: today,
-};
-
 const DefaultState = {
   NUMBER_FROM: 1000,
-  CURRENCY_FROM: CURRENCY_OPTIONS[0],
-  CURRENCY_TO: CURRENCY_OPTIONS[1],
+  CURRENCY_FROM: currencyOptions[0],
+  CURRENCY_TO: currencyOptions[1],
+};
+
+const DateRange = {
+  MIN: subDays(today, 7),
+  MAX: today,
 };
 
 function ConverterForm(props) {
@@ -105,7 +102,7 @@ function ConverterForm(props) {
           id='currencyFrom'
           className={styles['converter-form__select']}
           styles={customSelectStyles}
-          options={CURRENCY_OPTIONS}
+          options={currencyOptions}
           isSearchable={false}
           value={currencyFrom}
           onChange={handleSelectChange}
@@ -127,7 +124,7 @@ function ConverterForm(props) {
           id='currencyTo'
           className={styles['converter-form__select']}
           styles={customSelectStyles}
-          options={CURRENCY_OPTIONS}
+          options={currencyOptions}
           isSearchable={false}
           value={currencyTo}
           onChange={handleSelectChange}
@@ -156,7 +153,7 @@ function ConverterForm(props) {
 }
 
 ConverterForm.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default ConverterForm;

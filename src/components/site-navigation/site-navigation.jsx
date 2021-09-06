@@ -1,16 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
+import { NavLink } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 function SiteNavigation() {
   return (
     <nav className={classNames(styles['header__nav'], styles['site-navigation'])}>
       <ul className={styles['site-navigation__list']}>
-        <li><a className={styles['site-navigation__link']} href="services">Услуги</a></li>
-        <li><a className={styles['site-navigation__link']} href="credit">Рассчитать кредит</a></li>
-        <li><span className={classNames(styles['site-navigation__link'], styles['site-navigation__link--active'])}>Конвертер валют</span></li>
-        <li><a className={styles['site-navigation__link']} href="contacts">Контакты</a></li>
-        <li><a className={styles['site-navigation__link']} href="ask">Задать вопрос</a></li>
+        <li><NavLink to={AppRoute.SERVICES} activeClassName={styles['site-navigation__link--active']} className={styles['site-navigation__link']}>Услуги</NavLink></li>
+        <li><NavLink to={AppRoute.CREDIT} activeClassName={styles['site-navigation__link--active']} className={styles['site-navigation__link']}>Рассчитать кредит</NavLink></li>
+        <li><NavLink to={AppRoute.CONVERTER} activeClassName={styles['site-navigation__link--active']} className={classNames(styles['site-navigation__link'])}>Конвертер валют</NavLink></li>
+        <li><NavLink to={AppRoute.CONTACTS} activeClassName={styles['site-navigation__link--active']} className={styles['site-navigation__link']}>Контакты</NavLink></li>
+        <li><NavLink to={AppRoute.ASK} activeClassName={styles['site-navigation__link--active']} className={styles['site-navigation__link']}>Задать вопрос</NavLink></li>
       </ul>
     </nav>
   );

@@ -25,8 +25,10 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'));
 
+
 /*
 
-9. Придумать, как удалять 11ю запись из массива
+  — прописать текст для ссылок на СС
+  — добавить страницу 404
 
 */

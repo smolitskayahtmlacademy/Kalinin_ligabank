@@ -1,8 +1,9 @@
 import { format } from 'date-fns';
 import { getExchangeRates } from './action';
 import { toast } from 'react-toastify';
+import { today as todayDate } from '../const';
 
-const today = format(new Date(), 'yyyy-MM-dd');
+const today = format(todayDate, 'yyyy-MM-dd');
 
 const fetchExchangeRates = (date = today) => async (dispatch, _getState, api) => {
   const APIRoute = date === today ? 'latest.json' : `historical/${date}.json`;
