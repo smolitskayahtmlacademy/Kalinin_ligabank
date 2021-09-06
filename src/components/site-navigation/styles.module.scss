@@ -1,0 +1,30 @@
+@import '../../styles/global/mixins.scss';
+
+.site-navigation__list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.site-navigation__link {
+  display: inline-block;
+  padding: 34px 12px;
+  transition: color .3s, opacity .3s;
+
+  &--active {
+    color: var(--blue);
+    cursor: default;
+  }
+}
+
+.site-navigation__link[href] {
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+
+  &:active {
+    opacity: .8;
+  }
+}

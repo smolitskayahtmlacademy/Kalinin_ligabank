@@ -1,0 +1,90 @@
+.converter-form {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 120px;
+  row-gap: 85px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    width: 56px;
+    height: 36px;
+    transform: translateX(-50%);
+    background: url(./icons/swap-icon.svg) 0 0 no-repeat;
+  }
+}
+
+.converter-form__field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.convert-form__label {
+  width: 100%;
+  margin-bottom: 25px;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.converter-form__input-text {
+  flex-grow: 1;
+  margin-right: 15px;
+  padding: 13px;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 500;
+}
+
+.converter-form__select {
+  width: 120px;
+  font-size: 30px;
+  line-height: 42px;
+  cursor: pointer;
+  background: url(./icons/chevron-icon.svg) 83% 50% no-repeat;
+}
+
+.converter-form__datepicker {
+  width: 390px;
+  height: 60px;
+  padding-right: 60px;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  cursor: pointer;
+}
+
+.converter-form__result-btn {
+  width: 100%;
+  max-width: 382px;
+  margin-left: auto;
+  padding: 17px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--blue);
+  transition: opacity .3s, box-shadow .3s;
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--btn-shadow);
+  }
+
+  &:active {
+    opacity: .9;
+    box-shadow: none;
+  }
+}
+
+.converter-form__datepicker {
+  background: url(./icons/calendar-icon.svg) 95% 50% no-repeat;
+}

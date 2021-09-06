@@ -1,0 +1,44 @@
+@import '../../styles/global/mixins.scss';
+
+.user-navigation {
+  @include reset-list;
+}
+
+.user-navigation__link {
+  display: inline-block;
+  padding: 34px 0;
+  transition: color .3s, opacity .3s;
+
+  &--login {
+    position: relative;
+    max-width: 210px;
+    padding-left: 30px;
+  }
+  &--login svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--black);
+  }
+
+  svg {
+    transition: fill .3s;
+  }
+}
+
+.user-navigation__link[href] {
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+
+  &:active {
+    opacity: .8;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: var(--blue);
+  }
+}

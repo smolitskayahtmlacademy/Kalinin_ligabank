@@ -1,0 +1,129 @@
+@import '../../styles/global/mixins.scss';
+
+.footer {
+  background-color: var(--light-grey);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 252px 144px 196px 155px 102px;
+  column-gap: 80px;
+  align-items: baseline;
+  margin: 0 auto;
+  padding: 35px 0;
+}
+
+.footer__info {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--grey);
+
+  p {
+    margin: 0;
+  }
+}
+
+.footer__navigation {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__navigation-link {
+  display: block;
+  padding: 4px 0;
+  font-weight: 500;
+  transition: color .3s, opacity .3s;
+
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+
+  &:active {
+    opacity: .8;
+  }
+}
+
+.footer__phone-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--grey);
+
+  &--short-number {
+    padding-left: 29px;
+    max-width: 196px;
+  }
+
+  &--long-number {
+    padding-left: 33px;
+    max-width: 155px;
+  }
+
+  b {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--black);
+    transition: color .3s, opacity .3s;
+  }
+
+  svg {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    fill: var(--black);
+    transition: fill .3s, opacity .3s;
+  }
+}
+
+.footer__phone-link[href] {
+  &:hover b,
+  &:focus b {
+    color: var(--blue);
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: var(--blue);
+  }
+
+  &:active b,
+  &:active svg {
+    opacity: .8;
+  }
+}
+
+.footer__socials {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  column-gap: 1px;
+  margin: 0 -7px;
+  margin-top: 15px;
+}
+
+.footer__socials-link {
+  display: flex;
+  padding: 7px;
+  transition: opacity .3s;
+
+  svg {
+    fill: var(--black);
+    transition: fill .3s;
+  }
+}
+
+.footer__socials-link[href] {
+  &:hover svg,
+  &:focus svg {
+    fill: var(--blue);
+  }
+
+  &:active {
+    opacity: .8;
+  }
+}
